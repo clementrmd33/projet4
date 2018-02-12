@@ -1,0 +1,49 @@
+#container_img{
+    position: relative;
+    background-image: url("images/alaska.jpg");
+    height: 800px;
+}
+#container_img a{
+    color: white;
+    font-size: 20px;
+}
+#container_header ul{
+    display: flex;
+    float: right;
+    list-style-type: none;
+}
+.navbar-brand{
+    font-size: 30px;
+    color: white;
+}
+.navbar-collapse{
+    background-color: rgba(0,0,0, 0.8);
+}
+#description-header{
+    position: absolute;
+    top: 500px;
+    left: 130px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    background-color: rgba(0,0,0,0.6);
+}
+#container-extract h1{
+    text-align: center;
+}
+#container-extract p{
+    text-align: justify;
+}
+.table{
+    border: 1px solid black;
+    margin-top: 30px;
+}
+thead{
+    background-color: #46b8da;
+}
+#container_footer{
+    text-align: center;
+    color: white;
+    background-color:#46b8da;
+    line-height: 100px;
+}
