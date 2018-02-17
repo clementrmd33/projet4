@@ -1,5 +1,4 @@
-<?php include('header.php')?>
-
+<?php ob_start(); ?>
 <div class="container">
     <form>
         <div class="form-group">
@@ -18,3 +17,5 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+<?php $content = ob_get_clean(); ?>
+<?php require('frontend/template.php') ?>
