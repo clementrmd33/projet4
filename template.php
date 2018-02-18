@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -13,9 +14,9 @@
       <h1>BLOG DE JEAN FORTEROCHE</h1>
       <nav>
         <ul>
-          <li><a href="index.php">Accueil</a></li>
-          <li><a href="#">Chapitres</a></li>
-          <li><a href="login.php">S'identifier</a></li>
+          <li><i class="fas fa-home"></i><a href="index.php">Accueil</a></li>
+          <li><i class="fas fa-book"></i><a href="#">Chapitres</a><i class="fas fa-sort-down"></i></li>
+          <li><i class="fas fa-pencil-alt"></i><a href="login.php">S'identifier</a></li>
         </ul>
       </nav>
     </header>

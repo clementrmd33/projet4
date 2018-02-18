@@ -36,6 +36,9 @@ nav a{
 	color: white;
 	text-decoration: none;
 }
+nav a:hover{
+	color: red;
+}
 #descriptif-container{
 	position: absolute;
 	top: 500px;
@@ -55,14 +58,14 @@ nav a{
 #descriptif-container button{
 	width: 30%;	
 	height: 30px;
-	background-color: rgb(47, 186, 208);
-	border-color:rgb(47, 186, 208);
+	background-color: rgb(35, 114, 165);
+	border-color:rgb(35, 114, 165);
 	color:white;
 	border-radius: 10px;
 	font-size: 20px;
 }
 footer{
-	background-color: rgb(47, 186, 208);
+	background-color: rgb(35, 114, 165);
 	text-align: center;
 	height: 60px;
 }
@@ -84,7 +87,7 @@ table{
 	border-radius: 10px;
 }
 thead{
-	background-color: rgb(47, 186, 208);
+	background-color: rgb(35, 114, 165);
 }
 td{
 	text-align: center;
@@ -94,4 +97,41 @@ td{
 	height: 450px;
 	margin: auto;
 	text-align: justify;
+}
+/*LOGIN.PHP*/
+#login h1{
+	text-align: center;
+	text-decoration: underline;
+}
+#container-login{
+	background-color: rgb(227, 232, 232);
+	width: 60%;
+	margin: auto;
+	height: 120px;
+	line-height: 40px;
+	text-align: center;
+}
+#container-login input{
+	width: 40%;
+	height: 20px;
+	margin: auto;
+}
+nav i{
+	color: white;
+}
+#bloc-bouton{
+	text-align: left;
+	width: 40%;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+}
+#bloc-bouton button{
+	width: 120px;
+	height: 30px;
+	background-color: rgb(35, 114, 165);
+	color: white;
+	border: rgb(35, 114, 165) 2px solid;
+	border-radius: 10px;
+	font-size: 14px;
 }
