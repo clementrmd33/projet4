@@ -81,6 +81,7 @@ table{
 	border: 1px solid black;
 	margin: auto;
 	width: 40%;
+	border-radius: 10px;
 }
 thead{
 	background-color: rgb(47, 186, 208);
