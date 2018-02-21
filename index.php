@@ -1,6 +1,14 @@
 <?php
-require('model/model.php');
+require('controller/control.php');
 
-$req = getPost();
-
-require('view/homeView.php');
+if(isset($_GET['action'])){
+  if($_GET['action'] == 'listPost'){
+    listPost();
+  }
+  else {
+    echo 'Erreur, aucun identifiant de billet envoyé';
+  }
+}
+else {
+  listPost();
+}
