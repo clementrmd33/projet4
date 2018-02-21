@@ -40,8 +40,8 @@
               {
               ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($donnees['P_TITLE'])?></td>
-                    <td><?php echo htmlspecialchars($donnees['P_DATE'])?></td>
+                    <td><?php echo htmlspecialchars($donnees['title'])?></td>
+                    <td><?php echo htmlspecialchars($donnees['date_post'])?></td>
                 </tr>
               <?php
               }
