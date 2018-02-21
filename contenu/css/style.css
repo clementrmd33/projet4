@@ -1,11 +1,10 @@
-/*TEMPLATE*/
 body{
 	width: 100%;
 	margin: auto;
 }
 #container{
 	position: relative;
-	background-image: url('images/alaska.jpg');
+	background-image: url('../images/alaska.jpg');
 	height: 800px;
 }
 header h1{
@@ -56,7 +55,7 @@ nav a:hover{
 	font-size: 30px;
 }
 #descriptif-container button{
-	width: 30%;	
+	width: 30%;
 	height: 30px;
 	background-color: rgb(35, 114, 165);
 	border-color:rgb(35, 114, 165);

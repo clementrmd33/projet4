@@ -1,20 +1,16 @@
 <?php ob_start(); ?>
 <div id="container-tableau">
-    <table id="tableau-episodes">
+    <table id="tableau-chapitres">
         <thead>
             <tr>
-                <th>Derniers épisodes ajoutés</th>
+                <th>Derniers chapitres ajoutés</th>
                 <th>Date</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>alaska1</td>
-                <td>12/07/2018</td>
-            </tr>
-            <tr>
-                <td>alaska2</td>
-                <td>10/06/2018</td>
+                <td><?php echo $posts['title'];?></td>
+                <td><?php echo $posts['date'];?></td>
             </tr>
         </tbody>
     </table>
