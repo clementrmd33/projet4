@@ -1,3 +1,9 @@
+<?php $title = 'Accueil'; ?>
+<?php ob_start(); ?>
+<p>Bienvenue sur mon blog </br> Pour lire mon nouveau roman </p>
+<button>Cliquez ici</button>
+<?php $info = ob_get_clean(); ?>
+
 <?php ob_start(); ?>
 <section>
   <div id="container-tableau">
@@ -10,16 +16,16 @@
           </thead>
           <tbody>
             <?php
-            while ($donnees = $req->fetch())
+            while ($d_posts = $posts->fetch())
             {
             ?>
               <tr>
-                  <td><?php echo htmlspecialchars($donnees['title'])?></td>
-                  <td><?php echo htmlspecialchars($donnees['date_post'])?></td>
+                  <td><?php echo htmlspecialchars($d_posts['title'])?></td>
+                  <td><?php echo htmlspecialchars($d_posts['date_post'])?></td>
                 </tr>
             <?php
             }
-            $req->closeCursor();
+            $posts->closeCursor();
             ?>
           </tbody>
           </table>
@@ -32,12 +38,8 @@
               </thead>
               <tbody>
                   <tr>
-                      <td>Super</td>
-                      <td>12/07/2018</td>
-                  </tr>
-                  <tr>
-                      <td>Fantastique</td>
-                      <td>12/07/2018</td>
+                    <td></td>
+                    <td></td>
                   </tr>
               </tbody>
           </table>
@@ -48,4 +50,10 @@
       </div>
 </section>
 <?php $content = ob_get_clean(); ?>
+
+<?php ob_start(); ?>
+<footer>
+  <p>Mention légale | Site réalisé par Clément RAYMOND pour la formation Openclassroom</p>
+</footer>
+<?php $footer = ob_get_clean();?>
 <?php require('template.php'); ?>
