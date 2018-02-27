@@ -38,7 +38,7 @@
               </thead>
               <tbody>
                   <tr>
-                    <td></td>
+                    <td><?php echo htmlspecialchars($d_posts['title'])?></td>
                     <td></td>
                   </tr>
               </tbody>

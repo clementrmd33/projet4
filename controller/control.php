@@ -1,19 +1,23 @@
 <?php
-require('model/model.php');
+
+require_once('Model/PostManager.php');
 
 function listPosts()
 {
-  $posts = getPosts();
-  require('view/homeView.php');
+  $postManager = new \Openclassrooms\Projet4\Model\PostManager();
+  $posts = $postManager->getPosts();
+
+  require('View/homeView.php');
 }
 
-function listComments()
+function listChapters()
 {
-  $posts = getPosts();
-  require('view/chapitres.php');
+  $postManager = new \Openclassrooms\Projet4\Model\PostManager();
+  $posts = $postManager->getPosts();
+  require('View/chapitres.php');
 }
 
 function loginView()
 {
-  require('view/loginView.php');
+  require('View/loginView.php');
 }

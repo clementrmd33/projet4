@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
   <div id="bloc_login">
-  	<form method="post" action="#" id="login">
+  	<form method="post" action="view/adminView.php" id="login">
   		<h1>Identification</h1>
   		<div id="container-login">
   			<input type="text" name="identifiant" id="identifiant" placeholder="Vos identifiant"></input></br>

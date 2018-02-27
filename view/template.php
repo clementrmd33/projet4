@@ -15,7 +15,7 @@
       <nav>
         <ul>
           <li><i class="fas fa-home"></i><a href="index.php">Accueil</a></li>
-          <li><i class="fas fa-book"></i><a href="index.php?action=listComments">Chapitres</a></li>
+          <li><i class="fas fa-book"></i><a href="index.php?action=listChapters">Chapitres</a></li>
           <li><i class="fas fa-pencil-alt"></i><a href="index.php?action=loginView">S'identifier</a></li>
         </ul>
       </nav>

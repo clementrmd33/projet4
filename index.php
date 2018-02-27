@@ -1,25 +1,25 @@
 <?php
-require('controller/control.php');
+require('Controller/control.php');
 
-//Billets
+//Articles page d'accueil
 
 if(isset($_GET['action'])){
   if($_GET['action'] == 'listPosts'){
     listPosts();
   }
   else {
-    echo 'Erreur, aucun identifiant de billet envoyé';
+    echo 'Erreur, aucun identifiant d\'articles envoyé';
   }
 }
 else {
   listPosts();
 }
 
-//commentaires
+//Articles page chapitres
 
 if (isset($_GET['action'])) {
-  if ($_GET['action'] == 'listComments') {
-    listComments();
+  if ($_GET['action'] == 'listChapters') {
+    listChapters();
   }
   else {
     echo 'Erreur, aucun identifiant de commentaire envoyé';
