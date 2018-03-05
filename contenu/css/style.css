@@ -63,6 +63,10 @@ nav a:hover{
 	border-radius: 10px;
 	font-size: 20px;
 }
+button a{
+	text-decoration: none;
+	color: white;
+}
 footer{
 	background-color: rgb(35, 114, 165);
 	text-align: center;
@@ -82,7 +86,7 @@ footer p{
 table{
 	border: 1px solid black;
 	margin: auto;
-	width: 40%;
+	width: 60%;
 	border-radius: 10px;
 }
 thead{
@@ -102,12 +106,14 @@ td{
 	text-align: center;
 	text-decoration: underline;
 	color: white;
+	margin-bottom: 0;
+	margin-top: 0px;
 }
 #container-login{
 	/*background-color: rgb(227, 232, 232);*/
 	width: 60%;
 	margin: auto;
-	height: 120px;
+	height: 100px;
 	line-height: 40px;
 	text-align: center;
 }
@@ -137,20 +143,12 @@ nav i{
 }
 /*PAGE CHAPITRE*/
 
-.text_chapitres{
+#chapitre-titre p {
+	font-size: 60px;
+	text-decoration: underline;
+}
+#block_page_2{
 	width: 60%;
 	margin: auto;
-}
-.titre_chapitre{
-	text-align: center;
-	color: blue;
-	font-size: 30px;
-}
-#nav_chapitres{
-	width: 100%;
-	height: 80px;
-}
-#nav_chapitres ul{
-	padding: 0;
-	display: flex;
+	text-align: justify;
 }

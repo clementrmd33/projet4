@@ -1,6 +1,6 @@
 <?php
 
-namespace Openclassrooms\Projet4\Model;
+use \Openclassrooms\Projet4\Model;
 
 class Manager
 {

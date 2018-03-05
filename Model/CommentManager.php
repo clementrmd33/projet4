@@ -1,10 +1,13 @@
 <?php
 
-namespace Openclassrooms\Projet4\Model;
+use \Openclassrooms\Projet4\Model;
 
 class CommentManager extends Manager
 {
-  public function {
+  public function getComments() {
+    $bdd = $this->bddConnect();
+    $comments = $bdd->query('SELECT * FROM b_comments');
 
+    return $comments;
   }
 }
