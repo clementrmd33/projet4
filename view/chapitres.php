@@ -8,28 +8,19 @@
 
   <?php ob_start(); ?>
   <div id="block_page_2">
+      <?php foreach ($posts as $d_posts):?>
     <section>
-      <?php
-        while ($d_posts = $posts->fetch())
-        {
-      ?>
       <div class="text_chapitres">
         <p class="titre_chapitre"><?php echo htmlspecialchars($d_posts['title'])?></p>
         </br>
         <p><?php echo htmlspecialchars($d_posts['content'])?></p>
+        <p><a href="index.php?action=PostView">Commentaires</a></p>
       </div>
-        <?php
-        }
-        $posts->closeCursor();
-        ?>
     </section>
-    </div>
-  <?php $content = ob_get_clean(); ?>
+<?php endforeach;?>
+  </div>
 
-  <?php ob_start(); ?>
-  <footer>
-    <p>Mention légale | Site réalisé par Clément RAYMOND pour la formation Openclassroom</p>
-  </footer>
-<?php $footer = ob_get_clean(); ?>
+
+  <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

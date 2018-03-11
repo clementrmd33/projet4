@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="contenu/css/style.css" rel="stylesheet">
+    <script src="../js/tinymce/tinymce.min.js" type="text/javascript"></script>
+    <script type="text/javascript">// <![CDATA[
+        tinyMCE.init({
+	         mode : "textareas",
+	         language : "fr",
+	         theme : "simple"
+         });
+    </script>
 </head>
 <body>
   <div id="container">
@@ -27,7 +35,8 @@
 
     <?= $content ?>
 
-    <?= $footer ?>
-
+  <footer>
+    <p>Mention légale | Site réalisé par Clément RAYMOND pour la formation Openclassroom</p>
+  </footer>
 </body>
 </html>

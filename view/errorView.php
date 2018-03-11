@@ -10,10 +10,4 @@
   </section>
 <?php $content = ob_get_clean(); ?>
 
-<?php ob_start(); ?>
-  <footer>
-    <p>Mention légale | Site réalisé par Clément RAYMOND pour la formation Openclassroom</p>
-  </footer>
-<?php $footer = ob_get_clean(); ?>
-
 <?php require('template.php'); ?>

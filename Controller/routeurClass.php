@@ -1,35 +1,50 @@
 <?php
-
 use \Openclassrooms\Projet4\Controller;
 
 require_once ('Controller/ControlClass.php');
 
-class RouteurClass{
-
+class RouteurClass
+{
   private $ctrlControl;
 
-  public function __construct(){
+  public function __construct()
+  {
     $this->ctrlControl = new ControllClass();
   }
 
-  public function routerRequete(){
-    try {
-    	if (isset($_GET['action'])) {
-    		if($_GET['action'] == 'listChapters'){
-    			$this->ctrlControl->listChapters();
-    		}
-    		elseif ($_GET['action'] == 'loginView') {
-    			$this->ctrlControl->loginView();
-    		}
-    		else {
-    			throw new \Exception('Impossible de trouver la page demandé');
-    		}
-    	}
-    	else{
-    		require('View/homeView.php');
-    	}
-    } catch (\Exception $e) {
-    	$errorMessage = $e->getMessage();
+  public function routerRequete()
+  {
+    if (isset($_GET['action']))
+    {
+      //Page chapitres
+      if($_GET['action'] == 'listChapters')
+      {
+        $this->ctrlControl->listChapters();
+      }
+      //Page de connection
+      elseif ($_GET['action'] == 'loginView')
+      {
+        $this->ctrlControl->loginView();
+      }
+      //Page d'administration
+      elseif ($_GET['action'] == 'connect') {
+
+          if(isset($_POST['pass']) AND $_POST['pass'] == 'Forteroche'){
+            $this->ctrlControl->connect();
+          }else {
+            throw new \Exception('le mot de passe est incorrect');
+          }
+
+      }
+      //Page commentaire
+      elseif ($_GET['action'] == 'PostView')
+      {
+        $this->ctrlControl->PostView();
+      }
+    }
+    else
+    {
+      require('View/homeView.php');
     }
   }
 }
