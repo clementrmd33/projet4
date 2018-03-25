@@ -14,7 +14,7 @@
         <p class="titre_chapitre"><?php echo htmlspecialchars($d_posts['title'])?></p>
         </br>
         <p><?php echo htmlspecialchars($d_posts['content'])?></p>
-        <p><a href="index.php?action=PostView">Commentaires</a></p>
+        <p><a href="index.php?action=PostView&amp;id=<?php echo $d_posts['id'];?> ">Commentaires</a></p>
       </div>
     </section>
 <?php endforeach;?>

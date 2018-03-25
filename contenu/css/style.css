@@ -1,7 +1,19 @@
+/*1_REGLAGE PAGE*/
+/*2_TEMPLATE*/
+/*3_PAGE LOGIN*/
+/*4_BLOC COMMENTAIRE*/
+/*5_PAGE CHAPITRE*/
+/*6_PAGE POSTVIEW*/
+/*7_PAGE ADMINISTRATION*/
+/*8_PAGE UPDATE CHAPTER*/
+/*9_REGLAGE JS*/
+/*10_PAGE D'ERREUR */
+/***************************1_REGLAGE PAGE**********************************/
 body{
 	width: 100%;
 	margin: auto;
 }
+/***************************2_TEMPLATE*************************************/
 #container{
 	position: relative;
 	background-image: url('../images/alaska.jpg');
@@ -14,7 +26,6 @@ header h1{
 }
 header{
 	position: fixed;
-	top: 0;
 	left: 0;
 	right: 0;
 	background-color: rgb(0,0,0);
@@ -28,8 +39,12 @@ nav{
 nav ul{
 	display: flex;
 	justify-content: space-around;
-	list-style: none;
 	font-size: 20px;
+	list-style: none;
+	padding: 0;
+}
+nav i{
+	margin-right: 5px;
 }
 nav a{
 	color: white;
@@ -45,7 +60,6 @@ nav a:hover{
 	right: 0;
 	background-color: rgba(0,0,0,0.7);
 	width: 40%;
-	height: 190px;
 	margin: auto;
 	text-align: center;
 	border-radius: 10px;
@@ -57,8 +71,8 @@ nav a:hover{
 #descriptif-container button{
 	width: 30%;
 	height: 30px;
-	background-color: rgb(35, 114, 165);
-	border-color:rgb(35, 114, 165);
+	background-color: rgb(35, 114, 165); /*Bleu clair*/
+	border-color:rgb(35, 114, 165); /*Bleu clair*/
 	color:white;
 	border-radius: 10px;
 	font-size: 20px;
@@ -68,7 +82,7 @@ button a{
 	color: white;
 }
 footer {
-	background-color: rgb(35, 114, 165);
+	background-color: rgb(35, 114, 165); /*Bleu clair*/
 	text-align: center;
 	height: 60px;
 	margin-top: 30px;
@@ -79,11 +93,10 @@ footer p{
 }
 #extrait-roman{
 	width: 80%;
-	height: 450px;
 	margin: auto;
 	text-align: justify;
 }
-/*PAGE LOGIN*/
+/*************************************3_PAGE LOGIN***************************/
 #login h1{
 	text-align: center;
 	text-decoration: underline;
@@ -92,7 +105,6 @@ footer p{
 	margin-top: 0px;
 }
 #container-login{
-	/*background-color: rgb(227, 232, 232);*/
 	width: 60%;
 	margin: auto;
 	height: 100px;
@@ -127,13 +139,13 @@ nav i{
 font-size: 60px;
 text-decoration: underline;
 }
-/*BLOC COMMENTAIRE*/
+/********************************4_BLOC COMMENTAIRE***************************/
 #container_commentaire{
 	width: 80%;
 	margin: auto;
 }
 .barre_commentaires{
-	background-color: blue;
+	background-color: rgb(35, 114, 165); /*Bleu clair*/
 	height: 50px;
 	line-height: 50px;
 	margin-bottom: 30px;
@@ -143,51 +155,43 @@ text-decoration: underline;
 	color: white;
 }
 #block_commentaire{
-	border: blue solid 2px;
+	border: solid 2px rgb(35, 114, 165); /*Bleu clair*/
 	border-radius: 20px;
-	box-shadow: 4px 4px 2px blue;
+	box-shadow: 4px 4px 2px rgb(35, 114, 165); /*Bleu clair*/
 	height: 170px;
 }
 #formulaire_commentaire{
 	flex-direction: column;
-	height: 170px;
 }
 .MP_commentaire{
 	width: 80%;
-	height: 100px;
 	margin: auto;
 	display: flex;
 	flex-direction: column;
 	padding-top: 15px;
 }
 .MP_commentaire input{
-	border: solid 1px rgb(225, 224, 224);
-	height: 30px;
-	margin-bottom: 10px;
+	border: solid 1px rgb(35, 114, 165); /*Bleu clair*/
 	border-radius: 5px;
-	font-size: 20px;
 }
 .MP_commentaire textarea{
 	border-radius: 5px;
-	font-size: 20px;
 }
 .MP_bouton{
 	width: 100%;
 	margin-top: 10px;
 	padding-left: 115px;
 }
-#MP_bouton button{
-	width: 20%;
-	height: 30px;
-	background-color: blue;
-	border-color:blue;
+#MP_bouton{
+	background-color: rgb(35, 114, 165); /*Bleu clair*/
+	border-color:rgb(35, 114, 165); /*Bleu clair*/
 	color:white;
 	border-radius: 10px;
-	font-size: 20px;
-	margin-left: 65px;
+	font-size: 15px;
+	margin-left:85px;
 	margin-top: 10px;
 }
-/*PAGE CHAPITRE*/
+/******************************5_PAGE CHAPITRE******************************/
 
 #chapitre-titre p {
 	font-size: 60px;
@@ -208,7 +212,7 @@ text-decoration: underline;
 	height: 50px;
 	line-height: 50px;
 }
-/*PAGE POSTVIEW*/
+/******************************6_PAGE POSTVIEW******************************/
 #Chapitre-titre p {
 	font-size: 50px;
 	text-decoration: underline;
@@ -219,11 +223,18 @@ text-decoration: underline;
 	padding-bottom: 50px;
 }
 .affichage_com{
-	text-align: center;
-	border: 1px solid blue;
+	display: flex;
+	flex-direction: column;
 	width: 80%;
 	margin: auto;
-	margin-bottom: 20px;
+}
+.commentaires{
+	display: flex;
+	border: 3px solid rgb(35, 114, 165); /*Bleu clair*/
+	margin-bottom: 5px;
+}
+.commentaires p {
+ margin: auto;
 }
 #block_page_com{
 	width: 70%;
@@ -231,7 +242,14 @@ text-decoration: underline;
 	text-align: justify;
 	margin-bottom: 30px;
 }
-/*PAGE ADMINISTRATION*/
+.button_signal{
+	float: right;
+	display: block;
+}
+.button_signal i{
+	padding-right: 10px;
+}
+/***************************7_PAGE ADMINISTRATION****************************/
 
 #Administration-titre p{
 	font-size: 60px;
@@ -256,4 +274,89 @@ text-decoration: underline;
 }
 #nav_administration a:active{
 	background-color: rgb(35, 114, 165);
+}
+#blocAdministration h1{
+	text-align: center;
+	text-decoration: underline;
+}
+#conteneur_delete{
+	height: 150px;
+}
+#conteneur_delete table{
+	margin: auto;
+	width: 50%;
+}
+#conteneur_delete th, td{
+	border: 1px black solid;
+	text-align: center;
+}
+#conteneur_delete a{
+	text-decoration: none;
+	color: blue;
+}
+#Add_chapter{
+	width: 10%;
+	margin: auto;
+}
+#Ajoutchapitre input{
+	margin-bottom: 20px;
+}
+/******************************8_PAGE UPDATE CHAPTER******************************/
+#update-titre p{
+	font-size: 60px;
+	text-decoration: underline;
+}
+#BlocUpdateChapter{
+	text-align: center;
+}
+#BlocUpdateChapter h1{
+	background-color: blue;
+	width: 50%;
+	margin: auto;
+	margin-top: 20px;
+}
+#conteneur_update{
+	background-color: rgb(225, 224, 224);
+	padding-top: 30px;
+	height: 300px;
+	width: 60%;
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+#conteneur_update label{
+	display: block;
+	width: 150px;
+	float: left;
+}
+#form_update input{
+	width: 70%;
+	height: 20px;
+}
+#form_update textarea{
+	height: 150px;
+	width: 70%;
+}
+#Ajoutchapitre form{
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+}
+/******************************9_REGLAGE JS******************************/
+#blocAdministration, #blocAdministration2, #Ajoutchapitre{
+	display: none;
+}
+#BlocCommentaireSignaler h1{
+	text-align: center;
+	text-decoration: underline;
+}
+/**************************10_PAGE D'ERREUR **************************/
+#titre_erreur{
+	font-size: 60px;
+	text-decoration: underline;
+	color: white;
+}
+#section_erreur p{
+	text-align: center;
+	font-size: 30px;
 }
