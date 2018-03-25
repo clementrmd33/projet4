@@ -47,11 +47,6 @@ class RouteurClass
           $CommentId= intval($_GET['id']);
           $this->ctrlControl->addReport($CommentId);
         }
-        //AJOUTER LE COMMENTAIRE DANS LA PARTIE ADMIN
-        elseif ($_GET['action'] == 'adminReport')
-        {
-          $this->ctrlControl->adminReport();
-        }
         //PAGE CHAPITRES
         elseif($_GET['action'] == 'listChapters')
         {

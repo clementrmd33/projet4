@@ -36,6 +36,7 @@ class ControllClass
       public function connect()
       {
         $posts = $this->billets->getPosts();
+        $reportAdmins = $this->Comments->reportAdmin();
         require('View/adminView.php');
       }
       //AJOUT COMMENTAIRES
@@ -66,9 +67,5 @@ class ControllClass
       {
         $reportComments = $this->Comments->reportComment($CommentId);
         require('View/homeView.php');
-      }
-      public function adminReport()
-      {
-        $reportAdmins = $this->Comments->reportAdmin();
       }
   }

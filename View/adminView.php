@@ -72,13 +72,13 @@
             <th>Date</th>
           </tr>
         </thead>
-        <?php foreach ($reportAdmins as $reportComment):?>
+        <?php foreach ($reportAdmins as $comments):?>
         <tbody>
           <tr>
-            <td><?php echo htmlspecialchars($reportComment['COM_ID']) ?></td>
-            <td><?php echo htmlspecialchars($reportComment['COM_AUTHOR']) ?></td>
-            <td><?php echo htmlspecialchars($reportComment['COM_CONTENT']) ?></td>
-            <td><?php echo htmlspecialchars($reportComment['COM_DATE']) ?></td>
+            <td><?php echo htmlspecialchars($comments['COM_ID']) ?></td>
+            <td><?php echo htmlspecialchars($comments['COM_AUTHOR']) ?></td>
+            <td><?php echo htmlspecialchars($comments['COM_CONTENT']) ?></td>
+            <td><?php echo htmlspecialchars($comments['COM_DATE']) ?></td>
           </tr>
         </tbody>
         <?php endforeach; ?>

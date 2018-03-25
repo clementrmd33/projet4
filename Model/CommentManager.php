@@ -44,10 +44,8 @@ class CommentManager extends Manager
   {
     $bdd = $this->bddConnect();
     $reportAdmins = $bdd->query('SELECT COM_ID,COM_AUTHOR, COM_CONTENT, COM_DATE
-                                 FROM b_comments
-                                 WHERE REPORT = 1
-                                 ORDER BY COM_ID
-                                 DESC');
+                                   FROM b_comments
+                                   WHERE REPORT = 1');
     return $reportAdmins;
   }
 }
