@@ -18,12 +18,12 @@
 <div id="blocAdministration">
   <div id="Ajoutchapitre">
     <h1>Ajout nouveau chapitre</h1>
-    <form action="" method="post">
+    <form action="index.php?action=addNewPost" method="POST">
       <label>TITRE:</label>
-      <input type="text" name="title" placeholder="Titre du chapitre"></input>
+      <input type="text" name="p_title" placeholder="Titre du chapitre"></input>
     </br>
       <label>TEXTE:</label>
-      <textarea id="mytextarea"></textarea>
+      <textarea id="mytextarea" name="p_content"></textarea>
       <input type="submit" value="Envoyez"></input>
     </form>
   </div>

@@ -8,7 +8,6 @@ class ControllClass
   {
     private $billets;
     private $Comments;
-    private $connection;
 
       public function __construct(){
         $this->billets = new PostManager();
@@ -61,6 +60,12 @@ class ControllClass
       {
         $delete = $this->billets->deletePost($delete_id);
         require('View/adminView.php');
+      }
+      //AJOUT D'UN CHAPITRE
+      public function addNewPost($p_title,$p_content)
+      {
+        $addpost = $this->billets->addPost($p_title,$p_content);
+        require('View/loginView.php');
       }
       //GESTION DES SIGNALEMENTS
       public function addReport($CommentId)

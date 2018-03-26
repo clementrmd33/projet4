@@ -29,6 +29,7 @@ class PostManager extends Manager
 
     return $post;
   }
+  //MODIFIER UN CHAPITRE
   public function updatePost($title, $content, $date, $id)
   {
     $bdd = $this->bddConnect();
@@ -39,6 +40,17 @@ class PostManager extends Manager
                              WHERE P_ID = ?');
     $update->execute(array($title, $content, $date, $id));
   }
+  //AJOUTER UN CHAPITRE
+  public function addPost($p_title,$p_content)
+  {
+    $bdd = $this->bddConnect();
+    $addpost = $bdd->prepare('INSERT INTO b_post(P_TITLE, P_CONTENT, P_DATE)
+                              VALUES (?,?,NOW())');
+    $addpost->execute(array($p_title,$p_content));
+
+    return $addpost;
+  }
+  //SUPPRIMER UN ARTICLE
   public function deletePost($delete_id)
   {
     $bdd = $this->bddConnect();

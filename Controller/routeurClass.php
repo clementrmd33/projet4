@@ -100,6 +100,21 @@ class RouteurClass
             throw new \Exception('Le commentaire n\'a pas été modifié ');
           }
         }
+        //AJOUTER UN ARTICLE
+        elseif ($_GET['action'] == 'addNewPost')
+        {
+          if (isset($_POST['p_title']) AND isset($_POST['p_content']))
+          {
+            if (!empty($_POST['p_title']) AND !empty($_POST['p_content']))
+            {
+              $this->ctrlControl->addNewPost($_POST['p_title'], $_POST['p_content']);
+            }
+            else
+            {
+              throw new \Exception('Les champs n\'ont pas été rempli correctement');
+            }
+          }
+        }
         //SUPPRIMER UN POST
         elseif ($_GET['action'] == 'deletepost')
         {
