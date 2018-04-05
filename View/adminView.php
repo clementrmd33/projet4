@@ -26,6 +26,9 @@
       <textarea id="mytextarea" name="p_content"></textarea>
       <input type="submit" value="Envoyez"></input>
     </form>
+    <div id="container_button">
+      <a href='index.php?action=return'>Retour</a>
+    </div>
   </div>
 
   <div id="BlocDeleteChapter">
@@ -47,7 +50,7 @@
             <td><?php echo htmlspecialchars($d_posts['id']) ?></td>
             <td><?php echo htmlspecialchars($d_posts['title']) ?></td>
             <td><?php echo htmlspecialchars($d_posts['date_post']) ?></td>
-            <td><button><a href="index.php?action=updateView">Modiez</a></button></td>
+            <td><button><a href="index.php?action=updateView&amp;id=<?php echo $d_posts['id'];?> ">Modifiez</a></button></td>
             <td><button><a href="index.php?action=deletepost&amp;id=<?php echo $d_posts['id'];?> ">Supprimer</a></button></td>
           </tr>
         </tbody>
@@ -70,6 +73,7 @@
             <th>Auteur</th>
             <th>Message</th>
             <th>Date</th>
+            <th></th>
           </tr>
         </thead>
         <?php foreach ($reportAdmins as $comments):?>
@@ -79,6 +83,7 @@
             <td><?php echo htmlspecialchars($comments['COM_AUTHOR']) ?></td>
             <td><?php echo htmlspecialchars($comments['COM_CONTENT']) ?></td>
             <td><?php echo htmlspecialchars($comments['COM_DATE']) ?></td>
+            <td><button><a href="index.php?action=deleteComments&amp;id=<?php echo $comments['COM_ID'];?> ">Supprimer</a></button></td>
           </tr>
         </tbody>
         <?php endforeach; ?>

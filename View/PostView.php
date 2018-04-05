@@ -4,7 +4,7 @@
 
 <?php ob_start(); ?>
 <div id="Chapitre-titre">
-  <p><?php echo htmlspecialchars($d_post['title'])?></p>
+  <p>Chapitres</p>
 </div>
 <?php $info = ob_get_clean(); ?>
 
@@ -12,6 +12,7 @@
   <div id="block_page_com">
     <section>
       <div id="text_chapitres_com">
+        <h1><?php echo htmlspecialchars($d_post['title'])?></h1>
         <p><?php echo htmlspecialchars($d_post['content'])?></p>
       </div>
       <div id="container_commentaire">
@@ -39,7 +40,7 @@
   <?php foreach ($comments as $d_comments):?>
       <div class="commentaires">
           <p><strong><?php echo htmlspecialchars($d_comments['author']);?></strong> : <?php echo htmlspecialchars($d_comments['content']);?> // <em><?php echo htmlspecialchars($d_comments['date_comment']); ?></em></p>
-          <a href="index.php?action=addReport&id=<?= $d_comments['id'];?>"><button type="button" name="button">AA</button></a>
+          <a href="index.php?action=addReport&id=<?= $d_comments['id'];?>"><button type="button" name="button">Signaler</button></a>
       </div>
   <?php endforeach; ?>
   </div>

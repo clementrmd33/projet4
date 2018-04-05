@@ -1,0 +1,66 @@
+/*Ipad Pro 1024px*/
+@media screen and (max-width: 1024px){
+  header{
+      flex-direction: column;
+  }
+  header h1{
+      width: 100%;
+      text-align: center;
+      margin-left: 0;
+  }
+  header nav{
+    width: 60%;
+  }
+  #Administration-titre p{
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 900px){
+  #descriptif-container{
+    width: 60%;
+  }
+  #BlocDeleteChapter{
+    height: 300px;
+  }
+  #conteneur_update{
+    width: 90%;
+    height: 300px;
+  }
+}
+/*Ipad 768px*/
+@media screen and (max-width: 768px){
+  #block_page_2{
+    width: 80%;
+  }
+  #conteneur_delete table{
+    width: 80%;
+  }
+}
+@media screen and (max-width: 500px){
+  nav ul{
+    text-align: center;
+    flex-direction: column;
+  }
+  #descriptif-container{
+    display: none;
+  }
+  #container{
+    background-image: none;
+    height: 250px;
+  }
+  #nav_administration li{
+    width: 100%;
+  }
+  footer p{
+    padding: 0;
+  }
+  footer{
+    height: 40px;
+  }
+}
+/*IPHONE 7_Iphone8_Iphone X 375px*/
+@media screen and (max-width: 375px){
+  #MP_bouton{
+    margin-left: 60px;
+  }
+}

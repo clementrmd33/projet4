@@ -107,7 +107,7 @@ class RouteurClass
           {
             if (!empty($_POST['p_title']) AND !empty($_POST['p_content']))
             {
-              $this->ctrlControl->addNewPost($_POST['p_title'], $_POST['p_content']);
+              $this->ctrlControl->addNewPost($p_title = strip_tags($_POST['p_title']),$p_content = strip_tags($_POST['p_content']));
             }
             else
             {
@@ -126,6 +126,22 @@ class RouteurClass
           {
             throw new \Exception("le post n'a pas été supprimer");
           }
+        }
+        //SUPPRIMER UN COMMENTAIRE
+        elseif ($_GET['action'] == 'deleteComments')
+        {
+          if (isset($_GET['id']) && $_GET['id'] > 0)
+          {
+            $this->ctrlControl->deleteComments($_GET['id']);
+          }
+          else
+          {
+            throw new \Exception('le commentaire n’a pas été supprimé');
+          }
+        }
+        elseif ($_GET['action'] == 'return')
+        {
+          $this->ctrlControl->return();
         }
       }
       else

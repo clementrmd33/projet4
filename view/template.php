@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="contenu/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="contenu/css/mediaqueries.css" />
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=vkvq2dzssu5igxxi1uk64pxupp4lkm90ea56z53lb1wyrsb6"></script>
     <script>
       tinymce.init({

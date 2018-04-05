@@ -13,7 +13,7 @@
       <form action="index.php?action=updatepost" method="post">
         <div id="form_update">
           <label for="id">Ancien id :</label>
-          <input type="text" id="id" name="id" value="id"></input>
+          <input type="text" id="id" name="id" value="<?php echo htmlspecialchars($_GET['id']);?>"></input>
           </br>
           <label for="title">Nouveau titre :</label>
           <input type="text" id="title "name="title" placeholder="Titre"></input>
@@ -22,13 +22,13 @@
           <textarea type="text" id="content" name="content" placeholder="Votre texte"></textarea>
           </br>
           <label for="date">Nouvelle date :</label>
-          <input type="text" id="date "name="date" placeholder="Date du jour"></input>
+          <input type="text" id="date "name="date" value="JJ/MM/AAAA"></input>
           </br>
         </div>
         <input type="submit" value="Validez"></input>
       </form>
     </div>
-    <a href="index.php?action=connect"><button type="submit" name="button">Retour</button></a>
+    <a href="index.php?action=return"><button type="submit" name="button">Retour</button></a>
   </div>
 <?php $content = ob_get_clean();?>
 

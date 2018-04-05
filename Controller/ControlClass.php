@@ -53,24 +53,45 @@ class ControllClass
       public function updatepost($title, $content, $date, $id)
       {
         $update = $this->billets->updatePost($title, $content, $date, $id);
-        require('View/updateChapter.php');
+        $posts = $this->billets->getPosts();
+        $reportAdmins = $this->Comments->reportAdmin();
+        require('View/adminView.php');
       }
       //SUPPRESSION CHAPITRE
       public function deletepost($delete_id)
       {
         $delete = $this->billets->deletePost($delete_id);
+        $posts = $this->billets->getPosts();
+        $reportAdmins = $this->Comments->reportAdmin();
         require('View/adminView.php');
       }
       //AJOUT D'UN CHAPITRE
       public function addNewPost($p_title,$p_content)
       {
         $addpost = $this->billets->addPost($p_title,$p_content);
-        require('View/loginView.php');
+        $posts = $this->billets->getPosts();
+        $reportAdmins = $this->Comments->reportAdmin();
+        require('View/adminView.php');
       }
       //GESTION DES SIGNALEMENTS
       public function addReport($CommentId)
       {
         $reportComments = $this->Comments->reportComment($CommentId);
         require('View/homeView.php');
+      }
+      //SUPRRESION COMMENTAIRE SIGNALER
+      public function deleteComments($delete_report)
+      {
+        $delete_comment = $this->Comments->deleteReport($delete_report);
+        $posts = $this->billets->getPosts();
+        $reportAdmins = $this->Comments->reportAdmin();
+        require('View/adminView.php');
+      }
+      //ACTUALISATION PAGE
+      public function return()
+      {
+        $posts = $this->billets->getPosts();
+        $reportAdmins = $this->Comments->reportAdmin();
+        require('View/adminView.php');
       }
   }

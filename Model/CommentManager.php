@@ -9,12 +9,12 @@ class CommentManager extends Manager
   public function getComments($postId)
   {
     $bdd = $this->bddConnect();
-    $comments = $bdd->prepare('SELECT COM_ID as id,
+    $comments = $bdd->prepare("SELECT COM_ID as id,
                                       COM_AUTHOR as author,
                                       COM_CONTENT as content,
-                                      COM_DATE as date_comment
+                                      DATE_FORMAT(COM_DATE, ' le %d/%m/%Y à %Hh%imin%ss') as date_comment
                                FROM b_comments
-                               WHERE POST_ID = ?');
+                               WHERE POST_ID = ?");
     $comments->execute(array($postId));
 
     return $comments;
@@ -40,6 +40,17 @@ class CommentManager extends Manager
 
     return $reportComments;
   }
+  //SUPPRIMER COMMENTAIRE SIGNALER
+  public function deleteReport($delete_report)
+  {
+    $bdd = $this->bddConnect();
+    $delete_comment = $bdd->prepare('DELETE FROM b_comments
+                                WHERE COM_ID = ?');
+    $delete_comment->execute(array($delete_report));
+
+    return $delete_comment;
+  }
+  //AFFICHAGE DES COMMENTAIRES SIGNALER DANS UN TABLEAU
   public function reportAdmin()
   {
     $bdd = $this->bddConnect();

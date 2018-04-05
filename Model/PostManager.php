@@ -8,12 +8,13 @@ class PostManager extends Manager
   public function getPosts()
   {
     $bdd = $this->bddConnect();
-    $posts = $bdd->query('SELECT P_ID as id,
-                                 P_DATE as date_post,
+    $posts = $bdd->query("SELECT P_ID as id,
+                                 DATE_FORMAT(P_DATE, '%d/%m/%Y') as date_post,
                                  P_TITLE as title,
                                  P_CONTENT as content
-                          FROM b_post');
-
+                          FROM b_post
+                          ORDER BY P_ID
+                          DESC");
     return $posts;
   }
   public function getPost($postId)

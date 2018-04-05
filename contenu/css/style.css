@@ -203,11 +203,11 @@ text-decoration: underline;
 	text-align: justify;
 }
 .text_chapitres a{
-	color:blue;
+	color:rgb(35, 114, 165); /*Bleu clair*/;
 }
 .titre_chapitre{
 	text-align: center;
-	background-color: blue;
+	background-color: rgb(35, 114, 165); /*Bleu clair*/;
 	color: white;
 	height: 50px;
 	line-height: 50px;
@@ -217,6 +217,10 @@ text-decoration: underline;
 	font-size: 50px;
 	text-decoration: underline;
 	margin: 0;
+}
+#text_chapitres_com h1{
+	color: rgb(35, 114, 165); /*Bleu clair*/
+	text-decoration: underline;
 }
 #text_chapitres_com p{
 	padding-top: 50px;
@@ -252,11 +256,12 @@ text-decoration: underline;
 /***************************7_PAGE ADMINISTRATION****************************/
 
 #Administration-titre p{
-	font-size: 60px;
+	font-size: 50px;
 	text-decoration: underline;
 }
 #nav_administration{
 	width: 100%;
+	margin-top: 20px;
 }
 #nav_administration ul{
 	padding: 0;
@@ -279,8 +284,12 @@ text-decoration: underline;
 	text-align: center;
 	text-decoration: underline;
 }
-#conteneur_delete{
-	height: 150px;
+#container_button{
+	width: 100%;
+	margin: auto;
+}
+#container_button a{
+	margin-left: 10%;
 }
 #conteneur_delete table{
 	margin: auto;
