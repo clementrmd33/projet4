@@ -1,17 +1,19 @@
 <?php
 use \Openclassrooms\Projet4\Controller;
 
-require_once ('Controller/ControlClass.php');
+require_once ('Controller/BackendControl.php');
+require_once ('Controller/FrontendControl.php');
 
 class RouteurClass
 {
-  private $ctrlControl;
+  private $controlBack;
+  private $controlFront;
 
   public function __construct()
   {
-    $this->ctrlControl = new ControllClass();
+    $this->controlBack = new BackendControl();
+    $this->controlFront = new FrontendControl();
   }
-
   public function routerRequete()
   {
     try
@@ -22,7 +24,7 @@ class RouteurClass
         {
           if (isset($_GET['id']) && $_GET['id'] > 0)
           {
-            $this->ctrlControl->PostView($_GET['id']);
+            $this->controlFront->PostView($_GET['id']);
           }
           else
           {
@@ -34,7 +36,7 @@ class RouteurClass
         {
             if (!empty($_POST['author']) && !empty($_POST['content']))
             {
-                $this->ctrlControl->addComments($_POST['author'],$_POST['content'],$_GET['id']);
+                $this->controlFront->addComments($_POST['author'],$_POST['content'],$_GET['id']);
             }
             else
             {
@@ -45,17 +47,17 @@ class RouteurClass
         elseif ($_GET['action'] == 'addReport')
         {
           $CommentId= intval($_GET['id']);
-          $this->ctrlControl->addReport($CommentId);
+          $this->controlFront->addReport($CommentId);
         }
         //PAGE CHAPITRES
         elseif($_GET['action'] == 'listChapters')
         {
-          $this->ctrlControl->listChapters();
+          $this->controlFront->listChapters();
         }
         //PAGE DE CONNECTION
         elseif ($_GET['action'] == 'loginView')
         {
-          $this->ctrlControl->loginView();
+          $this->controlFront->loginView();
         }
         //PAGE LOGIN
         elseif ($_GET['action'] == 'connect')
@@ -64,7 +66,7 @@ class RouteurClass
           {
             if (isset($_POST['pass']) && $_POST['pass'] == 'Forteroche')
             {
-              $this->ctrlControl->connect();
+              $this->controlBack->connect();
             }
             else
             {
@@ -79,7 +81,7 @@ class RouteurClass
         //PAGE UPDATE
         elseif ($_GET['action'] == 'updateView')
         {
-            $this->ctrlControl->updateView();
+            $this->controlBack->updateView();
         }
         //MODIFIER UN ARTICLE
         elseif ($_GET['action'] == 'updatepost')
@@ -88,7 +90,7 @@ class RouteurClass
           {
             if (!empty($_POST['title']) AND !empty($_POST['content']) AND !empty($_POST['date']) AND !empty($_POST['id']))
             {
-              $this->ctrlControl->updatepost($_POST['title'],$_POST['content'],$_POST['date'],$_POST['id']);
+              $this->controlBack->updatepost($_POST['title'],$_POST['content'],$_POST['date'],$_POST['id']);
             }
             else
             {
@@ -107,7 +109,7 @@ class RouteurClass
           {
             if (!empty($_POST['p_title']) AND !empty($_POST['p_content']))
             {
-              $this->ctrlControl->addNewPost($p_title = strip_tags($_POST['p_title']),$p_content = strip_tags($_POST['p_content']));
+              $this->controlBack->addNewPost($p_title = strip_tags($_POST['p_title']),$p_content = strip_tags($_POST['p_content']));
             }
             else
             {
@@ -120,7 +122,7 @@ class RouteurClass
         {
           if (isset($_GET['id']) && $_GET['id'] > 0)
           {
-            $this->ctrlControl->deletepost($_GET['id']);
+            $this->controlBack->deletepost($_GET['id']);
           }
           else
           {
@@ -132,7 +134,7 @@ class RouteurClass
         {
           if (isset($_GET['id']) && $_GET['id'] > 0)
           {
-            $this->ctrlControl->deleteComments($_GET['id']);
+            $this->controlBack->deleteComments($_GET['id']);
           }
           else
           {
@@ -141,7 +143,7 @@ class RouteurClass
         }
         elseif ($_GET['action'] == 'return')
         {
-          $this->ctrlControl->return();
+          $this->controlFront->return();
         }
       }
       else

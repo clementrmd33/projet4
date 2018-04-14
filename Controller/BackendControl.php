@@ -1,40 +1,24 @@
 <?php
+
 use \Openclassrooms\Projet4\Controller;
 
 require_once('Model/PostManager.php');
 require_once('Model/CommentManager.php');
 
-class ControllClass
+class BackendControl
   {
-    private $billets;
+    private $Chapters;
     private $Comments;
 
-      public function __construct(){
-        $this->billets = new PostManager();
+      public function __construct()
+      {
+        $this->Chapters = new PostManager();
         $this->Comments = new CommentManager();
-      }
-      //PAGE CHAPITRE
-      public function listChapters()
-      {
-        $posts = $this->billets->getPosts();
-        require('View/chapitres.php');
-      }
-      //PAGE POST ET COMMENTAIRE
-      public function PostView()
-      {
-        $comments = $this->Comments->getComments($_GET['id']);
-        $post = $this->billets->getPost($_GET['id']);
-        require('View/PostView.php');
-      }
-      //PAGE CONNECTION
-      public function loginView()
-      {
-        require('View/loginView.php');
       }
       //PAGE ADMINISTRATION
       public function connect()
       {
-        $posts = $this->billets->getPosts();
+        $posts = $this->Chapters->getPosts();
         $reportAdmins = $this->Comments->reportAdmin();
         require('View/adminView.php');
       }
@@ -52,24 +36,24 @@ class ControllClass
       //MODIFICATION CHAPITRE
       public function updatepost($title, $content, $date, $id)
       {
-        $update = $this->billets->updatePost($title, $content, $date, $id);
-        $posts = $this->billets->getPosts();
+        $update = $this->Chapters->updatePost($title, $content, $date, $id);
+        $posts = $this->Chapters->getPosts();
         $reportAdmins = $this->Comments->reportAdmin();
         require('View/adminView.php');
       }
       //SUPPRESSION CHAPITRE
       public function deletepost($delete_id)
       {
-        $delete = $this->billets->deletePost($delete_id);
-        $posts = $this->billets->getPosts();
+        $delete = $this->Chapters->deletePost($delete_id);
+        $posts = $this->Chapters->getPosts();
         $reportAdmins = $this->Comments->reportAdmin();
         require('View/adminView.php');
       }
       //AJOUT D'UN CHAPITRE
       public function addNewPost($p_title,$p_content)
       {
-        $addpost = $this->billets->addPost($p_title,$p_content);
-        $posts = $this->billets->getPosts();
+        $addpost = $this->Chapters->addPost($p_title,$p_content);
+        $posts = $this->Chapters->getPosts();
         $reportAdmins = $this->Comments->reportAdmin();
         require('View/adminView.php');
       }
@@ -83,14 +67,14 @@ class ControllClass
       public function deleteComments($delete_report)
       {
         $delete_comment = $this->Comments->deleteReport($delete_report);
-        $posts = $this->billets->getPosts();
+        $posts = $this->Chapters->getPosts();
         $reportAdmins = $this->Comments->reportAdmin();
         require('View/adminView.php');
       }
       //ACTUALISATION PAGE
       public function return()
       {
-        $posts = $this->billets->getPosts();
+        $posts = $this->Chapters->getPosts();
         $reportAdmins = $this->Comments->reportAdmin();
         require('View/adminView.php');
       }
