@@ -1,7 +1,9 @@
 <?php $title = 'Page d\'erreur'; ?>
 
 <?php ob_start(); ?>
-  <h1 id="titre_erreur">ERREUR</h1>
+    <div class="titre_de_page">
+        <p>Page d'erreur</p>
+    </div>
 <?php $info = ob_get_clean(); ?>
 
 <?php ob_start(); ?>

@@ -1,6 +1,6 @@
 <?php
 
-require ('Controller/Routeur.php');
+require_once("control/Routeur.php");
 
-$routeur = new RouteurClass();
-$routeur->routerRequete();
+$Routeur = new Routeur();
+$Routeur->routerRequete();

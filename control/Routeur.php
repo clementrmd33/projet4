@@ -1,18 +1,17 @@
 <?php
-use \Openclassrooms\Projet4\Controller;
 
-require_once ('Controller/BackendControl.php');
-require_once ('Controller/FrontendControl.php');
+require_once("control/controllerBackend.php");
+require_once("control/controllerFrontend.php");
 
-class RouteurClass
+class Routeur
 {
   private $controlBack;
   private $controlFront;
 
   public function __construct()
   {
-    $this->controlBack = new BackendControl();
-    $this->controlFront = new FrontendControl();
+    $this->controlBack = new controllerBackend();
+    $this->controlFront = new controllerFrontend();
   }
   public function routerRequete()
   {
@@ -42,12 +41,6 @@ class RouteurClass
             {
               throw new \Exception('Erreur : tous les champs ne sont pas remplis !');
             }
-        }
-        //SIGNALER UN COMMENTAIRE
-        elseif ($_GET['action'] == 'addReport')
-        {
-          $CommentId= intval($_GET['id']);
-          $this->controlFront->addReport($CommentId);
         }
         //PAGE CHAPITRES
         elseif($_GET['action'] == 'listChapters')
@@ -84,23 +77,28 @@ class RouteurClass
             $this->controlBack->updateView();
         }
         //MODIFIER UN ARTICLE
-        elseif ($_GET['action'] == 'updatepost')
+        elseif ($_GET['action'] == 'updateChapter')
         {
-          if (isset($_POST['title']) AND isset($_POST['content']) AND isset($_POST['date']) AND isset($_POST['id']))
-          {
-            if (!empty($_POST['title']) AND !empty($_POST['content']) AND !empty($_POST['date']) AND !empty($_POST['id']))
+            if (isset($_POST['title']) AND isset($_POST['content']) AND isset($_POST['id']))
             {
-              $this->controlBack->updatepost($_POST['title'],$_POST['content'],$_POST['date'],$_POST['id']);
+                if (!empty($_POST['title']) AND !empty($_POST['content']) AND !empty($_POST['id']))
+                {
+                    $this->controlBack->updateValidate($_POST['title'],$_POST['content'],$_POST['id']);
+                }
+                else
+                {
+                    throw new \Exception("Le formulaire n\'a pas été rempli correctement");
+                }
             }
             else
             {
-              throw new \Exception("Le formulaire n\'a pas été rempli correctement");
+                throw new \Exception('Le commentaire n\'a pas été modifié ');
             }
-          }
-          else
-          {
-            throw new \Exception('Le commentaire n\'a pas été modifié ');
-          }
+        }
+        //AFFICHAGE PAGE NEW CHAPITRE
+        elseif ($_GET['action'] == 'newPagePost')
+        {
+            $this->controlBack->addChapter();
         }
         //AJOUTER UN ARTICLE
         elseif ($_GET['action'] == 'addNewPost')
@@ -109,7 +107,7 @@ class RouteurClass
           {
             if (!empty($_POST['p_title']) AND !empty($_POST['p_content']))
             {
-              $this->controlBack->addNewPost($p_title = strip_tags($_POST['p_title']),$p_content = strip_tags($_POST['p_content']));
+              $this->controlBack->addNewPost($p_title = ($_POST['p_title']),$p_content = ($_POST['p_content']));
             }
             else
             {
@@ -129,7 +127,21 @@ class RouteurClass
             throw new \Exception("le post n'a pas été supprimer");
           }
         }
-        //SUPPRIMER UN COMMENTAIRE
+        //SIGNALER UN COMMENTAIRE
+        elseif ($_GET['action'] == 'addReport')
+        {
+            $CommentId= intval($_GET['idComment']);
+            $this->controlFront->addReport($CommentId);
+        }
+        //VALIDER UN COMMENTAIRE SIGNALER
+        elseif ($_GET['action'] == 'validateComments')
+        {
+            if (isset($_GET['id']) && $_GET['id'] > 0)
+            {
+                $this->controlBack->validateComments($_GET['id']);
+            }
+        }
+        //SUPPRIMER UN COMMENTAIRE SIGNALER
         elseif ($_GET['action'] == 'deleteComments')
         {
           if (isset($_GET['id']) && $_GET['id'] > 0)
@@ -141,14 +153,18 @@ class RouteurClass
             throw new \Exception('le commentaire n’a pas été supprimé');
           }
         }
-        elseif ($_GET['action'] == 'return')
+        elseif ($_GET['action'] == 'retour')
         {
-          $this->controlFront->return();
+          $this->controlBack->retour();
+        }
+        elseif ($_GET['action'] == 'returnFront')
+        {
+            $this->controlFront->returnFront();
         }
       }
       else
       {
-        require('View/homeView.php');
+        require("View/homeView.php");
       }
     }
     catch (\Exception $e)

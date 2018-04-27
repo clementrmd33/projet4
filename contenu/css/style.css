@@ -1,13 +1,12 @@
 /*1_REGLAGE PAGE*/
 /*2_TEMPLATE*/
 /*3_PAGE LOGIN*/
-/*4_BLOC COMMENTAIRE*/
-/*5_PAGE CHAPITRE*/
-/*6_PAGE POSTVIEW*/
-/*7_PAGE ADMINISTRATION*/
-/*8_PAGE UPDATE CHAPTER*/
-/*9_REGLAGE JS*/
-/*10_PAGE D'ERREUR */
+/*4_PAGE CHAPITRE*/
+/*5_PAGE POSTVIEW*/
+/*6_PAGE ADMINISTRATION*/
+/*7_PAGE UPDATE CHAPTER*/
+/*8_REGLAGE JS*/
+/*9_PAGE D'ERREUR */
 /***************************1_REGLAGE PAGE**********************************/
 body{
 	width: 100%;
@@ -45,6 +44,7 @@ nav ul{
 }
 nav i{
 	margin-right: 5px;
+	color: white;
 }
 nav a{
 	color: white;
@@ -97,13 +97,6 @@ footer p{
 	text-align: justify;
 }
 /*************************************3_PAGE LOGIN***************************/
-#login h1{
-	text-align: center;
-	text-decoration: underline;
-	color: white;
-	margin-bottom: 0;
-	margin-top: 0px;
-}
 #container-login{
 	width: 60%;
 	margin: auto;
@@ -116,15 +109,11 @@ footer p{
 	height: 20px;
 	margin: auto;
 }
-nav i{
-	color: white;
-}
 #bloc-bouton{
 	text-align: left;
 	width: 40%;
 	margin: auto;
 	display: flex;
-	justify-content: space-between;
 }
 .bloc-bouton button{
 	width: 120px;
@@ -135,69 +124,8 @@ nav i{
 	border-radius: 10px;
 	font-size: 14px;
 }
-#login-titre p{
-font-size: 60px;
-text-decoration: underline;
-}
-/********************************4_BLOC COMMENTAIRE***************************/
-#container_commentaire{
-	width: 80%;
-	margin: auto;
-}
-.barre_commentaires{
-	background-color: rgb(35, 114, 165); /*Bleu clair*/
-	height: 50px;
-	line-height: 50px;
-	margin-bottom: 30px;
-}
-.barre_commentaires h1{
-	text-align: center;
-	color: white;
-}
-#block_commentaire{
-	border: solid 2px rgb(35, 114, 165); /*Bleu clair*/
-	border-radius: 20px;
-	box-shadow: 4px 4px 2px rgb(35, 114, 165); /*Bleu clair*/
-	height: 170px;
-}
-#formulaire_commentaire{
-	flex-direction: column;
-}
-.MP_commentaire{
-	width: 80%;
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-	padding-top: 15px;
-}
-.MP_commentaire input{
-	border: solid 1px rgb(35, 114, 165); /*Bleu clair*/
-	border-radius: 5px;
-}
-.MP_commentaire textarea{
-	border-radius: 5px;
-}
-.MP_bouton{
-	width: 100%;
-	margin-top: 10px;
-	padding-left: 115px;
-}
-#MP_bouton{
-	background-color: rgb(35, 114, 165); /*Bleu clair*/
-	border-color:rgb(35, 114, 165); /*Bleu clair*/
-	color:white;
-	border-radius: 10px;
-	font-size: 15px;
-	margin-left:85px;
-	margin-top: 10px;
-}
-/******************************5_PAGE CHAPITRE******************************/
-
-#chapitre-titre p {
-	font-size: 60px;
-	text-decoration: underline;
-}
-#block_page_2{
+/******************************4_PAGE CHAPITRE******************************/
+#block_chapitre{
 	width: 60%;
 	margin: auto;
 	text-align: justify;
@@ -212,19 +140,22 @@ text-decoration: underline;
 	height: 50px;
 	line-height: 50px;
 }
-/******************************6_PAGE POSTVIEW******************************/
-#Chapitre-titre p {
-	font-size: 50px;
-	text-decoration: underline;
-	margin: 0;
+/******************************5_PAGE POSTVIEW******************************/
+#block_page_com{
+    width: 70%;
+    margin: auto;
+    text-align: justify;
+    margin-bottom: 30px;
 }
 #text_chapitres_com h1{
-	color: rgb(35, 114, 165); /*Bleu clair*/
-	text-decoration: underline;
+	background-color: rgb(35, 114, 165); /*Bleu clair*/
+    margin-top: 50px;
+    text-align: center;
+    color: white;
 }
 #text_chapitres_com p{
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 .affichage_com{
 	display: flex;
@@ -236,15 +167,20 @@ text-decoration: underline;
 	display: flex;
 	border: 3px solid rgb(35, 114, 165); /*Bleu clair*/
 	margin-bottom: 5px;
+    text-align: center;
 }
 .commentaires p {
  margin: auto;
 }
-#block_page_com{
-	width: 70%;
-	margin: auto;
-	text-align: justify;
-	margin-bottom: 30px;
+#partie_date{
+    width: 15%;
+    margin: 0;
+    font-size: 15px;
+    text-align: center;
+}
+#partie_auteur{
+    width: 80%;
+    margin: 0;
 }
 .button_signal{
 	float: right;
@@ -253,118 +189,176 @@ text-decoration: underline;
 .button_signal i{
 	padding-right: 10px;
 }
-/***************************7_PAGE ADMINISTRATION****************************/
-
-#Administration-titre p{
-	font-size: 50px;
+#validate_signal{
+	text-align: center;
 	text-decoration: underline;
+	display: none;
 }
+/*Partie commentaire*/
+.barre_commentaires{
+    background-color: rgb(35, 114, 165); /*Bleu clair*/
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 30px;
+}
+.barre_commentaires h1{
+    text-align: center;
+    color: white;
+}
+#formulaire_commentaire{
+    border: solid 2px rgb(35, 114, 165); /*Bleu clair*/
+    border-radius: 20px;
+    box-shadow: 4px 4px 2px rgb(35, 114, 165); /*Bleu clair*/
+    height: 200px;
+}
+#formulaire_commentaire textarea{
+    height: 80px;
+}
+#formulaire_commentaire{
+    flex-direction: column;
+}
+.MP_commentaire{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+}
+.MP_commentaire input{
+    border: solid 1px rgb(35, 114, 165); /*Bleu clair*/
+    border-radius: 5px;
+}
+.MP_commentaire textarea{
+    border-radius: 5px;
+    z-index: 3;
+}
+#MP_bouton{
+    background-color: rgb(35, 114, 165); /*Bleu clair*/
+    border-color:rgb(35, 114, 165); /*Bleu clair*/
+    color:white;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+#button_com{
+    width: 100%;
+}
+/***************************6_PAGE ADMINISTRATION****************************/
+/*6.1:MENU NAVIGATION*/
 #nav_administration{
-	width: 100%;
-	margin-top: 20px;
+    width: 100%;
+    margin-top: 20px;
 }
 #nav_administration ul{
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
 }
 #nav_administration li{
-	background-color: rgb(214, 214, 214);
-	width: 40%;
-	height: 50px;
-	text-align: center;
-	line-height: 50px;
+    background-color: rgb(214, 214, 214);
+    width: 40%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
 }
 #nav_administration li:hover{
-	background-color: rgb(35, 114, 165);
+    background-color: rgb(35, 114, 165);
 }
 #nav_administration a:active{
-	background-color: rgb(35, 114, 165);
+    background-color: rgb(35, 114, 165);
+}
+/*6.2:TABLEAU*/
+#conteneur_delete table{
+    margin: auto;
+    width: 50%;
+}
+#conteneur_delete th, td{
+    border: 1px black solid;
+    text-align: center;
+}
+#conteneur_delete a{
+    text-decoration: none;
+    color: blue;
+}
+#Add_chapter{
+    width: 10%;
+    margin: auto;
 }
 #blocAdministration h1{
 	text-align: center;
 	text-decoration: underline;
 }
-#container_button{
-	width: 100%;
-	margin: auto;
-}
-#container_button a{
-	margin-left: 10%;
-}
-#conteneur_delete table{
-	margin: auto;
-	width: 50%;
-}
-#conteneur_delete th, td{
-	border: 1px black solid;
-	text-align: center;
-}
-#conteneur_delete a{
-	text-decoration: none;
-	color: blue;
-}
-#Add_chapter{
-	width: 10%;
-	margin: auto;
-}
-#Ajoutchapitre input{
-	margin-bottom: 20px;
-}
-/******************************8_PAGE UPDATE CHAPTER******************************/
-#update-titre p{
+/******************************7_PAGE UPDATE CHAPTER AND ADD NEW CHAPTER******************************/
+.titre_de_page p{
 	font-size: 60px;
 	text-decoration: underline;
 }
-#BlocUpdateChapter{
+#Id_modif{
+    width: 50%;
+    margin: auto;
+}
+#title_modif{
+    width: 70%;
+    margin: auto;
+}
+#title_modif input{
+    width: 70%;
+}
+.bloc_formulaire{
 	text-align: center;
 }
-#BlocUpdateChapter h1{
+.bloc_formulaire h1{
 	background-color: blue;
 	width: 50%;
 	margin: auto;
 	margin-top: 20px;
 }
-#conteneur_update{
+.conteneur_formulaire{
 	background-color: rgb(225, 224, 224);
 	padding-top: 30px;
-	height: 300px;
+	height: 500px;
 	width: 60%;
 	margin: auto;
 	margin-top: 20px;
 	border-radius: 10px;
 }
-#conteneur_update label{
-	display: block;
-	width: 150px;
-	float: left;
+#form_update #mceu_11{
+    height: 400px;
+    width: 90%;
+    margin: auto;
 }
-#form_update input{
-	width: 70%;
-	height: 20px;
+#form_update #mytextarea{
+    height: 300px;
 }
-#form_update textarea{
-	height: 150px;
-	width: 70%;
+#form_update{
+	width: 90%;
+    margin: auto;
 }
-#Ajoutchapitre form{
-	width: 80%;
-	margin: auto;
-	margin-top: 20px;
+#form_updates #mceu_11{
+    height: 400px;
+    width: 90%;
+    margin: auto;
 }
-/******************************9_REGLAGE JS******************************/
-#blocAdministration, #blocAdministration2, #Ajoutchapitre{
+#form_updates #mytextarea{
+    height: 300px;
+}
+#form_updates{
+    width: 90%;
+    margin: auto;
+}
+.bloc_boutton{
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+}
+/******************************8_REGLAGE JS******************************/
+#blocAdministration, #blocAdministration2{
 	display: none;
 }
 #BlocCommentaireSignaler h1{
 	text-align: center;
 	text-decoration: underline;
 }
-/**************************10_PAGE D'ERREUR **************************/
-#titre_erreur{
-	font-size: 60px;
-	text-decoration: underline;
-	color: white;
-}
+/**************************9_PAGE D'ERREUR **************************/
 #section_erreur p{
 	text-align: center;
 	font-size: 30px;
