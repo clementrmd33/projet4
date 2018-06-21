@@ -13,8 +13,8 @@
       <section>
           <div id="bloc_section">
               <div id="text_chapitres_com">
-                <h1><?php echo $d_post['title']?></h1>
-                <p><?php echo $d_post['content']?></p>
+                <h1><?php echo htmlspecialchars($d_post['title']);?></h1>
+                <p><?php echo $d_post['content'];?></p>
               </div>
               <a href='index.php?action=returnFront'>Retour</a>
           </div>
@@ -22,7 +22,7 @@
               <div class="barre_commentaires">
               <h1>Vos commentaires</h1>
           </div>
-          <form id="formulaire_commentaire" method="POST" action="index.php?action=addComments&amp;id=<?= $d_post['id'] ?>">
+          <form id="formulaire_commentaire" method="POST" action="index.php?action=addComments&amp;id=<?= htmlspecialchars($d_post['id']); ?>">
               <div class="MP_commentaire">
                   <label for="author">Nom:</label>
                   <input type="text" name="author" id="author" placeholder="Nom">
@@ -44,7 +44,7 @@
       <div class="commentaires">
           <p id="partie_auteur"><strong><?php echo htmlspecialchars($d_comments['author']);?></strong> : <?php echo htmlspecialchars($d_comments['content']);?></p><br/><p id="partie_date"><?php echo htmlspecialchars($d_comments['date_comment']); ?></p>
           <?php if ($d_comments['signalement'] != 2){?>
-            <a href="index.php?action=addReport&idPost=<?= $d_post['id'];?>&idComment=<?= $d_comments['id'];?>" id="button_signal"><button type="button" name="button">Signaler</button></a>
+            <a href="index.php?action=addReport&idPost=<?= htmlspecialchars($d_post['id']);?>&idComment=<?= htmlspecialchars($d_comments['id']);?>" id="button_signal"><button type="button" name="button" onclick="signalCom()">Signaler</button></a>
           <?php } ?>
       </div>
   <?php endforeach; ?>

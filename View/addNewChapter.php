@@ -17,7 +17,7 @@
                 </div>
                 <textarea id="mytextarea" name="p_content"></textarea>
                 <div class="bloc_boutton">
-                    <input type="submit" class="form_submit" value="Envoyez" onclick="confirmationAjoutTexte()">
+                    <input type="submit" class="form_submit" value="Envoyez">
                 </div>
             </form>
         </div>

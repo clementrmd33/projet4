@@ -11,10 +11,10 @@
       <?php foreach ($posts as $d_posts):?>
     <section>
       <div class="text_chapitres">
-        <p class="titre_chapitre"><?php echo $d_posts['title']?></p>
+        <p class="titre_chapitre"><?php echo htmlspecialchars($d_posts['title'])?></p>
         </br>
         <p><?php echo $d_posts['content']?></p>
-        <p><a href="index.php?action=PostView&amp;id=<?php echo $d_posts['id'];?> ">Commentaires</a></p>
+        <p><a href="index.php?action=PostView&amp;id=<?php echo htmlspecialchars($d_posts['id']);?>&amp;postId=<?php echo htmlspecialchars($d_posts['id']);?>">Commentaires</a></p>
       </div>
     </section>
 <?php endforeach;?>

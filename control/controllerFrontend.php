@@ -1,10 +1,9 @@
 <?php
 
+require_once ('model/CommentManager.php');
 require_once ('model/PostManager.php');
-require_once('model/CommentManager.php');
 
-class controllerFrontend
-{
+class controllerFrontend{
     private $Chapters;
     private $Comments;
 
@@ -12,41 +11,46 @@ class controllerFrontend
         $this->Chapters = new PostManager();
         $this->Comments = new CommentManager();
     }
-    //PAGE CHAPITRE
-    public function listChapters()
-    {
+
+    //                     1: AFFICHAGE D'UN CHAPITRE ET DES COMMENTAIRES SELON l'ID SELECTIONNE
+
+    public function PostView($postId){
+        $post = $this->Chapters->getPost($postId);
+        $comments = $this->Comments->getComments($postId);
+        require('View/PostView.php');
+    }
+
+    //                                      2: PAGE AJOUT COMMENTAIRE
+
+    public function addComments($author, $content, $postId){
+        $newComment = $this->Comments->postComments($author, $content, $postId);
+        $this->PostView($postId);
+    }
+
+    //                                      3 :PAGE CHAPITRES
+
+    public function listChapters(){
         $posts = $this->Chapters->getPosts();
         require('View/chapitres.php');
     }
-    //PAGE POST ET COMMENTAIRE
-    public function PostView()
-    {
-        $comments = $this->Comments->getComments($_GET['id']);
-        $post = $this->Chapters->getPost($_GET['id']);
-        require('View/PostView.php');
-    }
-    //AJOUT COMMENTAIRES
-    public function addComments($author, $content, $postId)
-    {
-        $newComment = $this->Comments->postComments($author, $content, $postId);
-        $this->PostView();
-    }
-    //PAGE CONNECTION
-    public function loginView()
-    {
+
+    //                                      4: PAGE DE CONNECTION
+
+    public function loginView(){
         require('View/loginView.php');
     }
-    //GESTION DES SIGNALEMENTS
-    public function addReport($CommentId)
-    {
+
+    //                                      11:SIGNALER UN COMMENTAIRE
+
+    public function addReport($CommentId){
         $reportComments = $this->Comments->reportComment($CommentId);
         $comments = $this->Comments->getComments($_GET['idPost']);
         $post = $this->Chapters->getPost($_GET['idPost']);
         require('View/PostView.php');
     }
-    //ACTUALISATION PAGE FRONTEND
-    public function returnFront()
-    {
+
+    //                                      14:BUTTON RETOUR
+    public function returnFront(){
         $posts = $this->Chapters->getPosts();
         require('View/chapitres.php');
     }
