@@ -7,16 +7,19 @@
 <?php $info = ob_get_clean();?>
 
 <?php ob_start(); ?>
-<div id="bloc_login">
+<div class="container">
     <form method="post" action="index.php?action=connect" id="login">
-        <div id="container-login">
-            <input type="text" name="pseudo" id="pseudo" placeholder="Vos identifiant"></br>
-            <input type="password" name="pass" id="pass" placeholder="Votre mot de passe"></br>
-            <div class="bloc-bouton">
-                <button><i class="fas fa-sign-in-alt"></i>Se connecter</button>
-            </div>
+        <div class="form-group">
+            <label for="pseudo">Identifiant:</label>
+            <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Votre identifiant...">
         </div>
+        <div class="form-group">
+            <label for="motdepasse">Mot de passe:</label>
+            <input type="password" class="form-control" id="motdepasse" name="motdepasse" placeholder="Votre mot de passe...">
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
+    <!--<a href="index.php?action=inscription">Nouveau administrateur</a>-->
 </div>
 <?php $content = ob_get_clean();?>
 

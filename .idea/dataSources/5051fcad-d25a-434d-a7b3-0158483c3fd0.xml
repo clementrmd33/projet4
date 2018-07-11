@@ -898,90 +898,118 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="226" parent="3" name="b_comments">
+    <table id="226" parent="3" name="Users">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="227" parent="3" name="b_post">
+    <table id="227" parent="3" name="b_comments">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="228" parent="226" name="COM_ID">
+    <table id="228" parent="3" name="b_post">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="229" parent="226" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="229" parent="226" name="COM_AUTHOR">
+    <column id="230" parent="226" name="pseudo">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="231" parent="226" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="232" parent="226" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="233" parent="227" name="COM_ID">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="234" parent="227" name="COM_AUTHOR">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="230" parent="226" name="COM_CONTENT">
+    <column id="235" parent="227" name="COM_CONTENT">
       <Position>3</Position>
       <DataType>varchar(250)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="231" parent="226" name="COM_DATE">
+    <column id="236" parent="227" name="COM_DATE">
       <Position>4</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="232" parent="226" name="POST_ID">
+    <column id="237" parent="227" name="POST_ID">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="226" name="REPORT">
+    <column id="238" parent="227" name="REPORT">
       <Position>6</Position>
       <DataType>int(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="234" parent="226" name="POST_ID">
+    <index id="239" parent="227" name="POST_ID">
       <ColNames>POST_ID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="235" parent="226" name="PRIMARY">
+    <key id="240" parent="227" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>COM_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="236" parent="226" name="post_com">
+    <foreign-key id="241" parent="227" name="post_com">
       <ColNames>POST_ID</ColNames>
       <RefSchemaName>blog_forteroche</RefSchemaName>
       <RefTableName>b_post</RefTableName>
       <RefColNames>P_ID</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="237" parent="227" name="P_ID">
+    <column id="242" parent="228" name="P_ID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="227" name="P_DATE">
+    <column id="243" parent="228" name="P_DATE">
       <Position>2</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="227" name="P_TITLE">
+    <column id="244" parent="228" name="P_TITLE">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="227" name="P_CONTENT">
+    <column id="245" parent="228" name="P_CONTENT">
       <Position>4</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="241" parent="227" name="PRIMARY">
+    <key id="246" parent="228" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>P_ID</ColNames>
       <Primary>1</Primary>

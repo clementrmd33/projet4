@@ -2,14 +2,17 @@
 
 require_once ('model/CommentManager.php');
 require_once ('model/PostManager.php');
+require_once ('model/userManager.php');
 
 class controllerBackend{
     private $Chapters;
     private $Comments;
+    private $Users;
 
     public function __construct(){
         $this->Chapters = new PostManager();
         $this->Comments = new CommentManager();
+        $this->Users = new userManager();
     }
 
     //                                      5:PAGE LOGIN
@@ -17,6 +20,7 @@ class controllerBackend{
     public function connect(){
         $posts = $this->Chapters->getPosts();
         $reportAdmins = $this->Comments->reportAdmin();
+        $_SESSION['pseudo'] = 'Admin';
         require('View/adminView.php');
     }
 
@@ -86,4 +90,15 @@ class controllerBackend{
         $reportAdmins = $this->Comments->reportAdmin();
         require('View/adminView.php');
     }
+    //                                     16:VERIFICATION INSCRIPTION
+    public function verifInscription($pseudo,$passhash){
+        $this->Users->inscription($pseudo,$passhash);
+        require ('View/loginView.php');
+    }
+
+    //                                     17:VERIFICATION CONNECTION
+    public function verifConnection($pseudo){
+        $resultat= $this->Users->verifPassword($pseudo);
+    }
+
 }

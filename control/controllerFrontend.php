@@ -54,4 +54,9 @@ class controllerFrontend{
         $posts = $this->Chapters->getPosts();
         require('View/chapitres.php');
     }
+
+    //                                      15:INSCRIPTION
+    public function InscriptionAdmin(){
+        require('View/Inscription.php');
+    }
 }
