@@ -1,10 +1,11 @@
 <?php
 
-require_once ('model/CommentManager.php');
 require_once ('model/PostManager.php');
+require_once ('model/CommentManager.php');
 require_once ('model/userManager.php');
 
-class controllerBackend{
+class controllerBackend
+{
     private $Chapters;
     private $Comments;
     private $Users;
@@ -97,8 +98,21 @@ class controllerBackend{
     }
 
     //                                     17:VERIFICATION CONNECTION
-    public function verifConnection($pseudo){
-        $resultat= $this->Users->verifPassword($pseudo);
+    public function verifConnection($pseudo, $motdepasse){
+        $erreurPass = false;
+        $erreurEmpty = false;
+        if (!empty($pseudo) AND !empty($motdepasse)) {
+            $resultat =  $this->Users->verifPassword($pseudo);
+            $passwordVerify = password_verify($motdepasse, $resultat['password']);
+            if($passwordVerify){
+                $this->connect();
+            } else {
+                $erreurPass = true;
+                require('View/loginView.php');
+            }
+        } else {
+            $erreurEmpty = true;
+            require('View/loginView.php');
+        }
     }
-
 }

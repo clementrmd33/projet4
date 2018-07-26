@@ -23,14 +23,16 @@
 <body>
     <div class=".container-fluid color_header_footer">
         <div class="row">
-            <div class="container" id="header">
-                <h1>BILLET SIMPLE POUR L'ALASKA</h1>
+            <div class="col-lg-12 text-center">
+                <div class="container" id="header">
+                    <h1>BILLET SIMPLE POUR L'ALASKA</h1>
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-11">
+            <div class="col-lg-12 text-center">
                 <div class=".container-fluid">
-                    <ul class="nav justify-content-end ">
+                    <ul class="nav justify-content-center ">
                         <li class="nav-item">
                             <a class="nav-link" href="index.php">Accueil</a>
                         </li>

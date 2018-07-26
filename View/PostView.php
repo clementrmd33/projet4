@@ -1,17 +1,17 @@
 <?php $title = 'Commentaire'; ?>
 
-<?php foreach ($post as $d_post):?>
-
 <?php ob_start(); ?>
 <div class="titre_de_page">
-  <p>Chapitre : <?= ($d_post['id']); ?></p>
+  <p>Chapitre :</p>
 </div>
 <?php $info = ob_get_clean(); ?>
 
 <?php ob_start(); ?>
-    <div class=".container-fluid" id="container_commentaire">
-        <div class="container" id="chapitre_view">
-            <div id="text_chapitre">
+
+<?php foreach ($post as $d_post):?>
+<div class=".container-fluid" id="container_commentaire">
+    <div class="container" id="chapitre_view">
+        <div id="text_chapitre">
                 <h1><?php echo htmlspecialchars($d_post['title']);?></h1>
                 <p><?php echo $d_post['content'];?></p>
             </div>
@@ -36,20 +36,19 @@
     </div>
 <?php endforeach;?>
 
-
-<div class=".container-fluid" id="container_com">
+<div class="container" id="container_com">
     <?php foreach ($comments as $d_comments):?>
-        <div class="row">
-            <div class="col-lg-2" id="com_author">
-                <p id="partie_auteur"><strong><?php echo htmlspecialchars($d_comments['author']);?></strong> :</p>
+        <div class="row text-center" id="container_message">
+            <div class="col-lg-1 col-md-1 col-sm-3 col-xs-1 font-weight-bold centrage">
+                <?php echo htmlspecialchars($d_comments['author']);?>
             </div>
-            <div class="col-lg-7" id="com_content">
-                <p><?php echo htmlspecialchars($d_comments['content']);?></p>
+            <div class="col-lg-6 col-md-6 col-sm-3 col-xs-1 centrage">
+                <?php echo htmlspecialchars($d_comments['content']);?>
             </div>
-            <div class="col-lg-2">
-                <p id="partie_date"><?php echo htmlspecialchars($d_comments['date_comment']); ?></p>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-1 centrage">
+                <?php echo htmlspecialchars($d_comments['date_comment']); ?>
             </div>
-            <div class="col-lg-1">
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-1 text-center">
                 <?php if ($d_comments['signalement'] != 2){?>
                     <button type="button" class="btn btn-primary" name="button" onclick="signalCom()"><a href="index.php?action=addReport&idPost=<?= htmlspecialchars($d_post['id']);?>&idComment=<?= htmlspecialchars($d_comments['id']);?>" id="button_signal">Signaler</a></button>
                 <?php } ?>

@@ -11,7 +11,7 @@
 <?php ob_start(); ?>
     <div class="container">
         <h2 class="text-center">Mise à jour chapitre</h2>
-        <form action="index.php?action=updateChapter&amp;id=<?php echo $donnees['id'];?>" method="POST" id="form_update" >
+        <form action="index.php?action=updateChapter&amp;id=<?php echo $donnees['id'];?>" method="POST" class="formReglage" >
             <div class="form-group">
                 <label>Id : <?php echo $_GET['id'];?></label>
             </div>
@@ -19,7 +19,7 @@
                 <label for="title">TITRE:</label>
                 <input type="text" class="form-control" name="title" id="title" value="<?php echo htmlspecialchars($donnees['title']);?>">
             </div>
-            <div class="form-group">
+            <div class="form-group com">
                 <label>Texte:</label>
                 <textarea class="form-control" id="mytextarea" name="content" placeholder="Votre texte"><?php echo $donnees['content']?></textarea>
             </div>

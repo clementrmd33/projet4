@@ -9,12 +9,12 @@
 <?php ob_start(); ?>
     <div class="container">
         <h2 class="text-center">Ajout d'un nouveau chapitre</h2>
-        <form action="index.php?action=addNewPost" method="POST" id="form_updates" >
+        <form action="index.php?action=addNewPost" method="POST" class="formReglage">
             <div class="form-group">
                 <label for="p_title">Titre:</label>
                 <input type="text" class="form-control" name="p_title" id="p_title" placeholder="Entrez le titre du chapitre...">
             </div>
-            <div class="form-group">
+            <div class="form-group com">
                 <label>Texte:</label>
                 <textarea class="form-control" id="mytextarea" name="p_content" rows="3" placeholder="Entrez votre texte..."></textarea>
             </div>

@@ -1,6 +1,5 @@
 <?php
-
-require_once ('model/manager.php');
+require_once ('model/Manager.php');
 
 class userManager extends Manager
 {

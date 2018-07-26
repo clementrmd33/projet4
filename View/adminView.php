@@ -18,7 +18,8 @@
     </div>
     <div id="blocAdministration">
         <h1>Gestion des chapitres</h1>
-        <div id="conteneur_delete">
+        <div class="container">
+            <div class="table-responsive-xl">
             <table class="table">
                 <thead class="thead-light">
                     <tr>
@@ -49,6 +50,7 @@
                 </tbody>
                 <?php endforeach; ?>
             </table>
+            </div>
             <div class="col-lg-12 text-center">
                 <button type="submit" class="btn btn-primary">
                     <a href="index.php?action=newPagePost">Ajoutez un nouveau chapitre</a>
@@ -59,7 +61,7 @@
     <div id="blocAdministration2">
         <div id="BlocCommentaireSignaler">
             <h1>Commentaires signalés</h1>
-            <div id="conteneur_delete">
+            <div class="container conteneur_admin">
                 <table class="table">
                     <thead class="thead-light">
                         <tr>

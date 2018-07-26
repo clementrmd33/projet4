@@ -1,9 +1,9 @@
 <?php
-
-require_once ('model/CommentManager.php');
 require_once ('model/PostManager.php');
+require_once ('model/CommentManager.php');
 
-class controllerFrontend{
+class controllerFrontend
+{
     private $Chapters;
     private $Comments;
 
@@ -23,8 +23,19 @@ class controllerFrontend{
     //                                      2: PAGE AJOUT COMMENTAIRE
 
     public function addComments($author, $content, $postId){
-        $newComment = $this->Comments->postComments($author, $content, $postId);
-        $this->PostView($postId);
+        if (!empty($author) && !empty($content)) {
+            if (strlen($author) && strlen($content) > 3 ){
+                $newComment = $this->Comments->postComments($author, $content, $postId);
+                header('Location: index.php?action=PostView&id='. $postId);
+            }
+            else{
+                echo '<script>alert("Vous devez remplir les champs avec 3 caracteres minimum");</script>';
+                $this->PostView($postId);
+            }
+        } else {
+            echo '<script>alert("Vous n\'avez pas remplis tous les champs");</script>';
+            $this->PostView($postId);
+        }
     }
 
     //                                      3 :PAGE CHAPITRES
@@ -37,6 +48,8 @@ class controllerFrontend{
     //                                      4: PAGE DE CONNECTION
 
     public function loginView(){
+        $erreurPass = false;
+        $erreurEmpty=false;
         require('View/loginView.php');
     }
 

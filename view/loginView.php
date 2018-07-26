@@ -8,6 +8,16 @@
 
 <?php ob_start(); ?>
 <div class="container">
+    <?php if($erreurPass): ?>
+        <div class="alert alert-danger" role="alert">
+            L'identifiant ou le mot de passe sont incorrect
+        </div>
+    <?php endif; ?>
+    <?php if($erreurEmpty): ?>
+        <div class="alert alert-danger" role="alert">
+            Les champs ne sont pas remplis correctement
+        </div>
+    <?php endif; ?>
     <form method="post" action="index.php?action=connect" id="login">
         <div class="form-group">
             <label for="pseudo">Identifiant:</label>
@@ -19,7 +29,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
-    <!--<a href="index.php?action=inscription">Nouveau administrateur</a>-->
 </div>
 <?php $content = ob_get_clean();?>
 

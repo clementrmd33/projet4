@@ -4,6 +4,7 @@
 }
 #header h1{
 	font-size: 50px;
+	font-style: italic;
 	font-weight: bold;
 }
 #photo_accueil{
@@ -99,10 +100,16 @@
 }
 #container_com{
 	border: 1px solid rgb(35, 114, 165) ;
-	padding-top: 20px;
+	padding-bottom: 10px;
 }
 #com_author p, #com_content p{
 	text-align: center;
+}
+.centrage{
+	margin: auto;
+}
+#container_message{
+	margin-top: 10px;
 }
 /***************************5_PAGE ADMINISTRATION****************************/
 #button1, #button2{
@@ -117,7 +124,7 @@
 #button1 a:hover, #button2 a:hover {
 	color:red;
 }
-#conteneur_delete a{
+#bloc_page_admin a{
     text-decoration: none;
     color: white;
 }
@@ -130,63 +137,16 @@
 	font-size: 60px;
 	text-decoration: underline;
 }
-#Id_modif{
-    width: 50%;
-    margin: auto;
-}
-#title_modif{
-    width: 70%;
-    margin: auto;
-}
-#title_modif input{
-    width: 70%;
-}
-.bloc_formulaire{
-	text-align: center;
-}
-.bloc_formulaire h1{
-	background-color: blue;
-	width: 50%;
-	margin: auto;
-	margin-top: 20px;
-}
-.conteneur_formulaire{
-	background-color: rgb(225, 224, 224);
-	padding-top: 30px;
-	height: 500px;
-	width: 60%;
-	margin: auto;
-	margin-top: 20px;
-	border-radius: 10px;
-}
-#form_update #mceu_11{
+.formReglage #mceu_11{
     height: 400px;
     width: 90%;
     margin: auto;
 }
-#form_update #mytextarea{
+.formReglage #mytextarea{
     height: 300px;
 }
-#form_update{
-	width: 90%;
-    margin: auto;
-}
-#form_updates #mceu_11{
-    height: 400px;
-    width: 90%;
-    margin: auto;
-}
-#form_updates #mytextarea{
-    height: 300px;
-}
-#form_updates{
-    width: 90%;
-    margin: auto;
-}
-.bloc_boutton{
-    width: 100%;
-    margin: auto;
-    margin-top: 20px;
+.com{
+	padding-bottom: 20px;
 }
 /******************************7_REGLAGE JS******************************/
 #blocAdministration, #blocAdministration2{

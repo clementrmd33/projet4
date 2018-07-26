@@ -1,6 +1,7 @@
 <?php $title = 'Accueil'; ?>
 <?php ob_start(); ?>
-<p>Bienvenue sur mon blog </br> Pour lire mon nouveau roman </p>
+    <p>Bienvenue sur mon blog</p>
+    <p>Pour lire mon nouveau roman </p>
     <button type="button" class="btn btn-primary"><a href="index.php?action=listChapters" id="button_accueil">Cliquez ici...</a></button>
 <?php $info = ob_get_clean(); ?>
 
