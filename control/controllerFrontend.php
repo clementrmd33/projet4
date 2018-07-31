@@ -23,6 +23,8 @@ class controllerFrontend
     //                                      2: PAGE AJOUT COMMENTAIRE
 
     public function addComments($author, $content, $postId){
+        $author = trim($_POST['author']);
+        $content = trim($_POST['content']);
         if (!empty($author) && !empty($content)) {
             if (strlen($author) && strlen($content) > 3 ){
                 $newComment = $this->Comments->postComments($author, $content, $postId);

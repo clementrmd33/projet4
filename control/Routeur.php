@@ -70,18 +70,22 @@ class Routeur
                 //                  7:MODIFIER UN ARTICLE
 
                 elseif ($_GET['action'] == 'updateChapter') {
-                    if (isset($_POST['title']) AND isset($_POST['content']) AND isset($_GET['id'])){
-                        if (!empty($_POST['title']) AND !empty($_POST['content'])){
+                    $title = trim($_POST['title']);
+                    $content = trim($_POST['content']);
+                    if (isset($title) AND isset($content) AND isset($_GET['id'])){
+                        if (!empty($title) AND !empty($content)){
                             if (isset($_SESSION['pseudo']) AND $_SESSION['pseudo'] == 'Admin') {
-                                $this->controlBack->updateValidate($_POST['title'], $_POST['content'], $_GET['id']);
+                                $this->controlBack->updateValidate($title,$content, $_GET['id']);
                             }else{
                                 require('View/loginView.php');
                             }
                         } else {
                             echo '<script>alert("Le formulaire n\'a pas été rempli correctement");</script>';
+                            require('View/adminView.php');
                         }
                     } else{
-                        echo '<script>alert("Le chapitre n\'a pas été modifié");</script>';
+                        echo '<script>alert("Une erreur s\'est produite");</script>';
+                        require('View/adminView.php');
                     }
                 }
 
@@ -98,10 +102,12 @@ class Routeur
                 //                  9:AJOUTER UN ARTICLE
 
                 elseif ($_GET['action'] == 'addNewPost') {
-                    if (isset($_POST['p_title']) AND isset($_POST['p_content'])) {
-                        if (!empty($_POST['p_title']) AND !empty($_POST['p_content'])) {
+                    $pseudo = trim($_POST['p_title']);
+                    $content = trim($_POST['p_content']);
+                    if (isset($pseudo) AND isset($content)) {
+                        if (!empty($pseudo) AND !empty($content)) {
                             if (isset($_SESSION['pseudo']) AND $_SESSION['pseudo'] == 'Admin') {
-                                $this->controlBack->addNewPost($p_title = ($_POST['p_title']),$p_content = ($_POST['p_content']));
+                                $this->controlBack->addNewPost($pseudo,$content);
                                 echo "<script>alert(\"L'article a été envoyé\");</script>";
                             }else{
                                 require('View/loginView.php');
